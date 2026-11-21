@@ -15,6 +15,7 @@
   --q3: #a7781c;  --q3-bg: #fbf2de;   /* 黃：第三問 */
   --q4: #7a4aa0;  --q4-bg: #f2ecf8;   /* 紫：第四問 */
   --q5: #b04a6a;  --q5-bg: #fbeaf0;   /* 紅：第五問 */
+  --q6: #c0621f;  --q6-bg: #fcefe4;   /* 橘：第六問 */
 
   --serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
   --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
@@ -36,6 +37,7 @@
     --q3: #e2bd6b;  --q3-bg: #332a17;
     --q4: #c6a4e6;  --q4-bg: #2b2235;
     --q5: #eb9ab3;  --q5-bg: #35212a;
+    --q6: #f0a46e;  --q6-bg: #36261a;
   }
 }
 
@@ -131,17 +133,18 @@ td:first-child { white-space: nowrap; }
 .qa.q3 { --c: var(--q3); --bg: var(--q3-bg); }
 .qa.q4 { --c: var(--q4); --bg: var(--q4-bg); }
 .qa.q5 { --c: var(--q5); --bg: var(--q5-bg); }
+.qa.q6 { --c: var(--q6); --bg: var(--q6-bg); }
 .chip.q1 { --c: var(--q1); } .chip.q2 { --c: var(--q2); } .chip.q3 { --c: var(--q3); }
-.chip.q4 { --c: var(--q4); } .chip.q5 { --c: var(--q5); }
+.chip.q4 { --c: var(--q4); } .chip.q5 { --c: var(--q5); } .chip.q6 { --c: var(--q6); }
 .qa-head { font-family: var(--sans); font-size: .82rem; font-weight: 600; color: var(--c); margin-bottom: .6rem; letter-spacing: .04em; }
 .qa-head span { color: var(--ink); font-weight: 600; margin-left: .3rem; }
 .qa p:last-child { margin-bottom: 0; }
 .qa .sutra { background: var(--surface); border-left-color: var(--c); }
 .qa th { border-bottom-color: var(--c); }
 .qa ul { margin: 0 0 1rem; padding-left: 1.3rem; }
-mark.q1, mark.q2, mark.q3, mark.q4, mark.q5 { background: none; color: inherit; border-bottom: 2px solid var(--c); padding: 0; }
+mark.q1, mark.q2, mark.q3, mark.q4, mark.q5, mark.q6 { background: none; color: inherit; border-bottom: 2px solid var(--c); padding: 0; }
 mark.q1 { --c: var(--q1); } mark.q2 { --c: var(--q2); } mark.q3 { --c: var(--q3); }
-mark.q4 { --c: var(--q4); } mark.q5 { --c: var(--q5); }
+mark.q4 { --c: var(--q4); } mark.q5 { --c: var(--q5); } mark.q6 { --c: var(--q6); }
 
 /* 段落內清單 */
 ol.points { padding-left: 1.4rem; }
