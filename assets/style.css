@@ -1,0 +1,184 @@
+/* 佛典思想史每日課程 — 共用樣式 */
+
+:root {
+  --paper: #f8f5ee;
+  --surface: #fffdf8;
+  --ink: #2a2521;
+  --ink-soft: #5f5750;
+  --ink-faint: #8f877e;
+  --rule: #e2dbcf;
+  --accent: #8e2c1f;          /* 朱 */
+  --link: #8e2c1f;
+
+  --q1: #2f64a8;  --q1-bg: #eaf1fb;   /* 藍：第一問 */
+  --q2: #3a7d47;  --q2-bg: #e8f3e9;   /* 綠：第二問 */
+  --q3: #a7781c;  --q3-bg: #fbf2de;   /* 黃：第三問 */
+  --q4: #7a4aa0;  --q4-bg: #f2ecf8;   /* 紫：第四問 */
+  --q5: #b04a6a;  --q5-bg: #fbeaf0;   /* 紅：第五問 */
+
+  --serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --measure: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1917;
+    --surface: #232019;
+    --ink: #e9e3d8;
+    --ink-soft: #bdb4a7;
+    --ink-faint: #8c8478;
+    --rule: #3a352d;
+    --accent: #e08a6f;
+    --link: #e8a184;
+    --q1: #8db4ea;  --q1-bg: #1f2a38;
+    --q2: #8fcc9a;  --q2-bg: #1e2d21;
+    --q3: #e2bd6b;  --q3-bg: #332a17;
+    --q4: #c6a4e6;  --q4-bg: #2b2235;
+    --q5: #eb9ab3;  --q5-bg: #35212a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; -webkit-text-size-adjust: 100%; }
+@media (min-width: 720px) { html { font-size: 18px; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+
+/* 頁首 */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: .9rem; padding-bottom: .9rem; gap: 1rem; }
+.site-header a { color: var(--ink-soft); text-decoration: none; }
+.site-header a:hover { color: var(--accent); }
+.brand { font-weight: 600; color: var(--ink) !important; }
+
+/* 標題 */
+h1, h2, h3 { font-weight: 700; line-height: 1.4; letter-spacing: 0.04em; }
+h1 { font-size: 1.9rem; margin: 2.5rem 0 .4rem; }
+h2 { font-size: 1.3rem; margin: 2.8rem 0 1rem; padding-bottom: .35rem; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 1.08rem; margin: 2rem 0 .6rem; }
+.kicker { font-family: var(--sans); font-size: .8rem; color: var(--accent); letter-spacing: .12em; margin-top: 2.5rem; }
+.kicker + h1 { margin-top: .4rem; }
+.subtitle { color: var(--ink-soft); margin: 0 0 1.5rem; }
+.time { font-family: var(--sans); font-size: .78rem; font-weight: 400; color: var(--ink-faint); margin-left: .5rem; letter-spacing: 0; }
+
+p { margin: 0 0 1.1rem; }
+strong { color: var(--ink); }
+
+/* 經文引用 */
+.sutra {
+  margin: 1.2rem 0 1.6rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+}
+.sutra p { margin: 0 0 .9rem; font-size: 1.04rem; }
+.sutra p:last-child { margin-bottom: 0; }
+.sutra .seg { font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--accent); margin-right: .4rem; letter-spacing: .08em; }
+.src {
+  display: block;
+  margin-top: .35rem;
+  text-align: right;
+  font-family: var(--sans);
+  font-size: .75rem;
+  color: var(--ink-faint);
+}
+.src a { color: var(--ink-faint); }
+.src a:hover { color: var(--accent); }
+
+/* 表格 */
+.table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+table { border-collapse: collapse; width: 100%; font-size: .93rem; line-height: 1.6; }
+th, td { padding: .55rem .7rem; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--ink-soft); border-bottom: 1.5px solid var(--ink-faint); white-space: nowrap; }
+td:first-child { white-space: nowrap; }
+
+/* 問答展開區塊 */
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: .8rem 1rem; margin: 1.2rem 0 2rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; font-family: var(--sans); font-size: .82rem; color: var(--ink-soft); }
+.legend-title { font-weight: 600; color: var(--ink); }
+.chip { display: inline-flex; align-items: center; gap: .4rem; }
+.chip::before { content: ""; width: .7rem; height: .7rem; border-radius: 2px; background: var(--c); }
+
+.qa {
+  --c: var(--q1); --bg: var(--q1-bg);
+  margin: 1.4rem 0 1.8rem;
+  padding: 1rem 1.2rem 1.1rem;
+  background: var(--bg);
+  border-left: 4px solid var(--c);
+  border-radius: 0 4px 4px 0;
+}
+.qa.q1 { --c: var(--q1); --bg: var(--q1-bg); }
+.qa.q2 { --c: var(--q2); --bg: var(--q2-bg); }
+.qa.q3 { --c: var(--q3); --bg: var(--q3-bg); }
+.qa.q4 { --c: var(--q4); --bg: var(--q4-bg); }
+.qa.q5 { --c: var(--q5); --bg: var(--q5-bg); }
+.chip.q1 { --c: var(--q1); } .chip.q2 { --c: var(--q2); } .chip.q3 { --c: var(--q3); }
+.chip.q4 { --c: var(--q4); } .chip.q5 { --c: var(--q5); }
+.qa-head { font-family: var(--sans); font-size: .82rem; font-weight: 600; color: var(--c); margin-bottom: .6rem; letter-spacing: .04em; }
+.qa-head span { color: var(--ink); font-weight: 600; margin-left: .3rem; }
+.qa p:last-child { margin-bottom: 0; }
+.qa .sutra { background: var(--surface); border-left-color: var(--c); }
+.qa th { border-bottom-color: var(--c); }
+.qa ul { margin: 0 0 1rem; padding-left: 1.3rem; }
+mark.q1, mark.q2, mark.q3, mark.q4, mark.q5 { background: none; color: inherit; border-bottom: 2px solid var(--c); padding: 0; }
+mark.q1 { --c: var(--q1); } mark.q2 { --c: var(--q2); } mark.q3 { --c: var(--q3); }
+
+/* 段落內清單 */
+ol.points { padding-left: 1.4rem; }
+ol.points > li { margin-bottom: 1rem; }
+
+/* 思考題與預告 */
+.next { margin: 2rem 0; padding: 1rem 1.2rem; border: 1px dashed var(--ink-faint); border-radius: 4px; }
+.think { color: var(--ink-soft); }
+
+/* 課與課之間的導覽 */
+.pager { display: flex; justify-content: space-between; gap: 1rem; margin: 3rem 0 1rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: .85rem; }
+.pager a, .pager span { max-width: 48%; }
+.pager .disabled { color: var(--ink-faint); }
+.pager .right { text-align: right; margin-left: auto; }
+
+.site-footer { margin: 3rem 0 2.5rem; font-family: var(--sans); font-size: .75rem; color: var(--ink-faint); }
+.site-footer a { color: var(--ink-faint); }
+
+/* 首頁 */
+.hero { padding: 1rem 0 .5rem; }
+.hero h1 { font-size: 2.1rem; }
+.howto { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.3rem; margin: 1.5rem 0; }
+.howto ol { margin: .3rem 0 0; padding-left: 1.3rem; }
+.progress { font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); }
+.progress-bar { height: 4px; background: var(--rule); border-radius: 2px; margin: .4rem 0 0; overflow: hidden; }
+.progress-bar > div { height: 100%; background: var(--accent); }
+
+.unit { margin: 2.4rem 0; }
+.unit-head { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: .4rem; }
+.unit-head h2 { margin: 0; padding: 0; border: 0; font-size: 1.2rem; }
+.unit-no { font-family: var(--sans); font-size: .78rem; color: var(--accent); letter-spacing: .1em; }
+.unit-meta { font-family: var(--sans); font-size: .78rem; color: var(--ink-faint); margin-left: auto; }
+.unit-lead { color: var(--ink-soft); font-size: .93rem; margin: .7rem 0 .6rem; }
+.lesson-list { list-style: none; margin: 0; padding: 0; }
+.lesson-list li { display: flex; gap: .9rem; padding: .32rem 0; border-bottom: 1px dotted var(--rule); font-size: .95rem; }
+.lesson-list .n { font-family: var(--sans); font-size: .78rem; color: var(--ink-faint); width: 2.4rem; flex: none; padding-top: .2rem; font-variant-numeric: tabular-nums; }
+.lesson-list .pending { color: var(--ink-faint); }
+.lesson-list .done a { text-decoration: none; color: var(--ink); }
+.lesson-list .done a:hover { color: var(--accent); }
+.lesson-list .done .n { color: var(--accent); font-weight: 600; }
+.badge { font-family: var(--sans); font-size: .68rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 2px; padding: 0 .3rem; margin-left: .4rem; vertical-align: .1em; }
