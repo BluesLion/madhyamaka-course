@@ -141,6 +141,7 @@ td:first-child { white-space: nowrap; }
 .qa ul { margin: 0 0 1rem; padding-left: 1.3rem; }
 mark.q1, mark.q2, mark.q3, mark.q4, mark.q5 { background: none; color: inherit; border-bottom: 2px solid var(--c); padding: 0; }
 mark.q1 { --c: var(--q1); } mark.q2 { --c: var(--q2); } mark.q3 { --c: var(--q3); }
+mark.q4 { --c: var(--q4); } mark.q5 { --c: var(--q5); }
 
 /* 段落內清單 */
 ol.points { padding-left: 1.4rem; }
